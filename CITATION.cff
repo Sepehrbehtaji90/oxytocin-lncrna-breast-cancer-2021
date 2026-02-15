@@ -1,1 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper and this repository."
+title: "Reproducible pipeline for: Identification of oxytocin-related lncRNAs and assessment of their expression in breast cancer (2021)"
+type: software
+authors:
+  - family-names: "Behtaji"
+    given-names: "Sepehr"
+
+repository-code: "https://github.com/<YOUR-USERNAME>/<YOUR-REPO>"
+license: "MIT"
+
+preferred-citation:
+  type: article
+  title: "Identification of oxytocin-related lncRNAs and assessment of their expression in breast cancer"
+  authors:
+    - family-names: "Behtaji"
+      given-names: "Sepehr"
+    - family-names: "Ghafouri-Fard"
+      given-names: "Soudeh"
+    - family-names: "Sayad"
+      given-names: "Arezou"
+    - family-names: "Sattari"
+      given-names: "Ali"
+    - family-names: "Rederstorff"
+      given-names: "Mathieu"
+    - family-names: "Taheri"
+      given-names: "Mohammad"
+  journal: "Scientific Reports"
+  volume: 11
+  year: 2021
+  pages: 6471
+  doi: "10.1038/s41598-021-86097-2"
+  url: "https://doi.org/10.1038/s41598-021-86097-2"
+  identifiers:
+    - type: other
+      value: "pmid:33742056"
 
