@@ -43,6 +43,20 @@ vignettes/*.pdf
 docs/
 
 # translation temp files
+
+
+
+# R
+.Rhistory
+.RData
+.Rproj.user
+
+# Local cached GEO data (do not commit)
+data/geo/
+*.rds
+*.gz
+*.CEL
+
 po/*~
 
 # RStudio Connect folder
