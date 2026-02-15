@@ -1,8 +1,3 @@
-install.packages(c("pheatmap"))
-if (!requireNamespace("BiocManager", quietly=TRUE)) install.packages("BiocManager")
-BiocManager::install(c("GEOquery", "limma"))
-
-
 
 # scripts/01_geo_qc.R
 library(GEOquery)
