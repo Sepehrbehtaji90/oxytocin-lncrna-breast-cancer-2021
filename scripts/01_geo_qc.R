@@ -1,4 +1,3 @@
-
 # scripts/01_geo_qc.R
 library(GEOquery)
 library(limma)
@@ -10,7 +9,7 @@ dir.create("results/figures", recursive = TRUE, showWarnings = FALSE)
 series <- "GSE54002"
 platform <- "GPL570"
 
-gset_list <- getGEO(series, GSEMatrix = TRUE, AnnotGPL = TRUE)
+gset_list <- getGEO(series, GSEMatrix = TRUE, AnnotGPL = TRUE, destdir = "data/geo")
 idx <- if (length(gset_list) > 1) grep(platform, names(gset_list)) else 1
 gset <- gset_list[[idx]]
 
@@ -20,7 +19,7 @@ ex <- exprs(gset)
 ex <- normalizeBetweenArrays(ex, method = "quantile")
 exprs(gset) <- ex
 
-# Manual group labels (as you requested)
+# Manual group labels
 gr <- c(rep("tumor", 300), rep("normal", 16), rep("tumor", 117))
 
 # Safety checks
@@ -51,5 +50,5 @@ plot(pc$x[,1:2], col = as.factor(gr), pch = 19, xlab = "PC1", ylab = "PC2")
 legend("topright", legend = levels(as.factor(gr)), col = 1:2, pch = 19)
 dev.off()
 
+# Local cache (do not commit to GitHub)
 saveRDS(gset, "data/geo/gset_norm.rds")
-
