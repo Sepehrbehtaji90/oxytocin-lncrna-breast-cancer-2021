@@ -1,1 +1,66 @@
 
+Why these genes/lncRNAs?
+========================
+
+Purpose
+-------
+This repository documents and reproduces the workflow behind our 2021 Scientific Reports study on
+oxytocin-pathway-related genes and long non-coding RNAs (lncRNAs) in breast cancer.
+
+The target list was not chosen arbitrarily. It was built using a combination of:
+(1) pathway-driven biology (oxytocin signalling and related calcium/cAMP signalling components),
+(2) unbiased discovery from public microarray data (GSE54002),
+(3) prior experimental evidence linking specific lncRNAs to downstream target genes (siRNA knockdown + microarray studies),
+and (4) literature review to ensure biological plausibility and relevance to cancer phenotypes.
+
+Target genes and lncRNAs
+------------------------
+lncRNAs:
+- LincMTX2 (LINC01116 / TALNEC2)
+- LincTNS1 (DIRC3)
+- LincZFP161 (LINC00667)
+- LincFOXF1 (FENDRR)
+(Additional candidates may appear in early drafts; the final set matches the 2021 publication.)
+
+Target genes:
+- OXTR
+- CAMK2D
+- ITPR1
+- RCAN1
+- CACNA2D1
+- FOS
+(Other genes mentioned in the proposal are not necessarily included in the final publication.)
+
+Selection logic (step-by-step)
+------------------------------
+1) Public microarray discovery (GSE54002):
+   - Differential expression between tumour and non-tumour samples was computed using limma.
+   - From down-regulated genes, those associated with the oxytocin signalling pathway were prioritised.
+
+2) Pathway enrichment and network context:
+   - Enrichment analysis (Enrichr/KEGG) was used to identify pathway-level relevance.
+   - Protein interaction/network context (STRING/Cytoscape) was used to identify hubs and connected components.
+
+3) lncRNA-to-target mapping (evidence-based):
+   - Candidate lncRNAs were selected based on published perturbation studies (siRNA knockdown followed by microarray),
+     which provide directional evidence that certain lncRNAs influence the expression of specific target genes.
+   - As an additional check, target genes were queried in lncRNA–target resources (e.g., lnc2target) to confirm support.
+
+4) Literature review:
+   - The final list was cross-checked against prior studies reporting altered expression, prognostic associations, or functional relevance
+     for genes such as OXTR, ITPR1, FOS, CACNA2D1, RGS2 (context), and related signalling components across cancers.
+
+Key references (proposal-selected; not exhaustive)
+--------------------------------------------------
+- Makoukji et al. (2016): microarray profiling in breast cancer tissues; includes OXTR among altered genes.
+- Khalil et al. (GSE16226): siRNA knockdown + microarray; used to support candidate lncRNA → target gene links.
+- Gu et al. (2016): prognostic gene signature work including ITPR1 and FOS in breast cancer context.
+- Wang et al. (2018): RGS2 downregulation and survival association in invasive breast carcinoma.
+- Yu et al. (2016): CACNA2D1 clinical relevance in epithelial ovarian cancer (cross-cancer plausibility).
+
+Notes
+-----
+- This file is a narrative explanation for target selection.
+- The repository scripts implement the computational steps; wet-lab validation details are documented in docs/ methods files.
+
+
